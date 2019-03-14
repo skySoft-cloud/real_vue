@@ -6,8 +6,8 @@ import "font-awesome/css/font-awesome.min.css"
 import 'element-ui/lib/theme-chalk/index.css';
 import App from './App'
 import router from './router'
-import axios from "axios"
-import qs from "qs"
+import * as ajax from './utils/ajax'
+
 
 /**
  * 全局导航守卫，检测未登录时应当跳转login页面
@@ -26,8 +26,7 @@ router.beforeEach((to, from, next)=> {
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
-Vue.prototype.$ajax = axios;
-Vue.prototype.$qs = qs;
+Vue.prototype.$ajax  = ajax;
 
 /* eslint-disable no-new */
 new Vue({
