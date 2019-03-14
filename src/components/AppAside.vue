@@ -1,50 +1,51 @@
 <template>
   <div>
+    <el-row type="flex" justify="center" class="main-min-height">
       <el-col :span="4">
         <el-menu
-          default-active="3"
+          :default-active="this.$route.path"
           class="el-aside-min-height"
           @open="handleOpen"
           @close="handleClose"
-          background-color="#545c64"
-          text-color="#fff"
+          background-color="#fff"
+          text-color="#000"
           :router="true"
-          active-text-color="#ffd04b">
+          :unique-opened="true"
+          :collapse-transition="true"
+          active-text-color="lightpink">
           <el-submenu index="1">
             <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>导航一</span>
+              <i class="el-icon-fa fa-user"></i>
+              <span>人物简介</span>
             </template>
-            <el-menu-item-group>
-              <template slot="title">分组一</template>
-              <el-menu-item index="1-1">选项1</el-menu-item>
-              <el-menu-item index="1-2">选项2</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="分组2">
-              <el-menu-item index="1-3">选项3</el-menu-item>
-            </el-menu-item-group>
-            <el-submenu index="1-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="1-4-1">选项1</el-menu-item>
-            </el-submenu>
+            <el-menu-item index="1-1">陈云</el-menu-item>
+            <el-menu-item index="1-2">苏继培</el-menu-item>
           </el-submenu>
-          <el-menu-item index="subpage/subpageone">
-            <i class="el-icon-menu"></i>
-            <span slot="title">导航二</span>
+          <el-menu-item index="subpageone">
+            <i class="el-icon-fa fa-transgender"></i>
+            <span slot="title">婚前历程</span>
           </el-menu-item>
           <el-menu-item index="3">
-            <i class="el-icon-document"></i>
-            <span slot="title">导航三</span>
+            <i class="el-icon-fa fa-heartbeat"></i>
+            <span slot="title">婚礼纪实</span>
           </el-menu-item>
-          <el-menu-item index="4">
-            <i class="el-icon-setting"></i>
-            <span slot="title">导航四</span>
-          </el-menu-item>
+          <el-submenu index="4">
+            <template slot="title">
+              <i class="el-icon-fa fa-calendar"></i>
+              <span slot="title">婚后计划</span>
+            </template>
+            <el-menu-item index="4-1">工作</el-menu-item>
+            <el-menu-item index="4-2">生活</el-menu-item>
+            <el-menu-item index="4-3">子女</el-menu-item>
+          </el-submenu>
         </el-menu>
       </el-col>
-    <el-col :span="20">
-      <router-view></router-view>
-    </el-col>
+      <el-col :span="20">
+        <el-col :span="20">
+          <router-view></router-view>
+        </el-col>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -53,19 +54,22 @@
     name: 'AppAside',
     data () {
       return {
-        handleOpen(key, keyPath) {
-          console.log(key, keyPath);
-        },
-        handleClose(key, keyPath) {
-          console.log(key, keyPath);
-        }
+        active_index: ""
+      }
+    },
+    methods: {
+      handleOpen(key, keyPath) {
+        console.log(key, keyPath);
+      },
+      handleClose(key, keyPath) {
+        console.log(key, keyPath);
       }
     }
   }
 </script>
 
 <style scoped>
-.el-aside-min-height{
-  height:500px;
-}
+  .el-aside-min-height {
+    height: 500px;
+  }
 </style>

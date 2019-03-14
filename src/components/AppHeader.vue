@@ -2,7 +2,7 @@
   <div>
     <el-row type="flex" class="row-bg bg-custom" justify="center">
       <el-col :span="24">
-          <h3>学习VUE</h3>
+        <h1>{{msg}}</h1>
       </el-col>
     </el-row>
   </div>
@@ -13,7 +13,7 @@
     name: 'AppHeader',
     data () {
       return {
-        msg: "我是头部！"
+        msg: "某人的2019年"
       }
     },
     methods: {
@@ -28,8 +28,5 @@
 </script>
 
 <style scoped>
-.bg-custom{
-  background-color: lightslategrey;
-  color: #fff;
-}
+
 </style>

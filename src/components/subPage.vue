@@ -1,12 +1,15 @@
 <template>
   <div>
-    <app-header></app-header>
-    <app-aside></app-aside>
-    <el-row type="flex" justify="center" class="main-min-height">
+    <App-Header></App-Header>
+    <App-Aside></App-Aside>
+    <!--<el-row type="flex" justify="center" class="main-min-height">
       <el-col :span="24">
+        <el-col :span="20">
+          <router-view></router-view>
+        </el-col>
       </el-col>
-    </el-row>
-    <app-footer></app-footer>
+    </el-row>-->
+    <App-Footer class="bg-custom fixed-class"></App-Footer>
   </div>
 </template>
 
@@ -22,9 +25,9 @@
       }
     },
     components: {
-      'app-header':AppHeader,
-      'app-aside':AppAside,
-      'app-footer':AppFooter,
+      AppHeader,
+      AppAside,
+      AppFooter
     }
   }
 </script>
@@ -33,4 +36,7 @@
 .main-min-height{
   height:500px;
 }
+  .fixed-class{
+    position: fixed;bottom: 0;width: 100%;
+  }
 </style>

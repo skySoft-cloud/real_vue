@@ -12,20 +12,16 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect:"/login",
-      component: AppLogin
+      //redirect:"/login",
+      component: subPage,
+      children:[{
+        path: 'subpageone',
+        component: subPageOne,
+      }],
     },
     {
       path: '/login',
       component: AppLogin,
     },
-    {
-      path: '/subpage',
-      component: subPage,
-      children:[{
-        path: 'subpageone',
-        component: subPageOne,
-      }]
-    }
   ]
 })

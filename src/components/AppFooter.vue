@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-row type="flex" class="row-bg bg-custom" justify="center">
-      <el-col :span="24">
+    <el-row type="flex" class="row-bg" justify="center">
+      <el-col :span="20">
         <h1>{{msg}}</h1>
       </el-col>
     </el-row>
@@ -13,15 +13,12 @@
     name: 'AppFooter',
     data () {
       return {
-        msg:"我是底部！"
+        msg:"创建于2019年3月14日！"
       }
     }
   }
 </script>
 
 <style scoped>
-  .bg-custom{
-    background-color: lightslategrey;
-    color: #fff;
-  }
+
 </style>
