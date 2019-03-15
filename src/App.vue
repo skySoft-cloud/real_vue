@@ -30,7 +30,7 @@
   }
 
   .bg-custom {
-    background-color: lightpink;
+    background-color: #f58f98;
     color: #fff;
   }
 </style>
