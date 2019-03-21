@@ -13,16 +13,21 @@ import * as ajax from './utils/ajax'
  * 全局导航守卫，检测未登录时应当跳转login页面
  */
 router.beforeEach((to, from, next)=> {
-  // 1. 验证登录用户名是否正确
-  // 1.1 获取本地存储的用户信息
-  let user_info = JSON.parse(localStorage["user_info"]);
-  // 1.2 不是admin登录并且当前不是login页面就跳转到login页面，
-  if (user_info["username"] !== "admin" && to.path != "/login") {
-    next('/login')
-  } else {
-    next();
-  }
-})
+  debugger
+ // 1. 验证登录用户名是否正确
+ // 1.1 获取本地存储的用户信息
+    if(!localStorage["user_info"]&&to.path!="/login"){
+      next('/login')
+    }else{
+      next();
+    }
+// 1.2 不是admin登录并且当前不是login页面就跳转到login页面，
+/* if (user_info["username"] !== "admin" && to.path != "/login") {
+ next('/login')
+ } else {
+ next();
+ }*/
+ })
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
