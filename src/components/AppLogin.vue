@@ -61,12 +61,19 @@
               username: this.form.name,
               pwd: this.form.pwd
             };
+            if(user_info.username!="admin"||user_info.pwd!="admin"){
+              this.$message({
+                type: 'error',
+                message: '账号密码错误!'
+              });
+              return false;
+            }
             // 1.1使用前先清理一下localStorage
             localStorage.clear();
             // 1.2只能字符串存储
             localStorage["user_info"] = JSON.stringify(user_info);
             // 2.跳转到子页面
-            this.$router.push({path: '/subpage'})
+            this.$router.push({path: '/'})
           } else {
             this.$message({
               type: 'error',

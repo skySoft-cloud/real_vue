@@ -1,7 +1,7 @@
 <template>
   <div>
-    <App-Header></App-Header>
-    <App-Aside></App-Aside>
+    <app-header></app-header>
+    <app-aside></app-aside>
     <!--<el-row type="flex" justify="center" class="main-min-height">
       <el-col :span="24">
         <el-col :span="20">
@@ -9,7 +9,7 @@
         </el-col>
       </el-col>
     </el-row>-->
-    <App-Footer class="bg-custom fixed-class"></App-Footer>
+    <app-footer class="bg-custom fixed-class"></app-footer>
   </div>
 </template>
 
@@ -25,9 +25,9 @@
       }
     },
     components: {
-      AppHeader,
-      AppAside,
-      AppFooter
+     "app-header":AppHeader,
+     "app-aside":AppAside,
+     "app-footer":AppFooter
     }
   }
 </script>
