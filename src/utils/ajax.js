@@ -56,6 +56,7 @@ async function get(options) {
  */
 async function post(options) {
   options.method = "post";
+  options.data = qs.stringify(data);
   let result = await baseRequest(options);
   return result;
 }
