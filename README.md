@@ -37,3 +37,6 @@ npm test
 
 > Vue Router
  - 去掉URL中的#，将 router配置下面的 `mode`改为`history`
+
+> 风格指南
+ - 单文件组件推荐使用短横线连接命名，例如 `"item-list.vue"`或者开头大写``"ItemList.vue"``
