@@ -6,7 +6,7 @@ import "font-awesome/css/font-awesome.min.css"
 import 'element-ui/lib/theme-chalk/index.css';
 import App from './App'
 import router from './router'
-import * as ajax from './utils/ajax'
+import * as ajax from './utils/ajax.js'
 
 
 /**

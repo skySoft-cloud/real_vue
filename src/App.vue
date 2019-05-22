@@ -33,4 +33,14 @@
     background-color: #f58f98;
     color: #fff;
   }
+  .row-bg{
+    height:56px;
+  }
+  .content-wrap{
+    margin: 20px 20px 100px 20px;
+    padding: 20px;
+    box-shadow: 1px 2px 6px 1px grey;
+    min-height:500px;
+  }
+
 </style>

@@ -2,19 +2,20 @@ import axios from "axios"
 import qs from "qs"
 import vue from "vue"
 
+
 /**
  * 配置环境所需的不同URL
  */
 let base_url = "";
 switch (process.env.NODE_ENV) {
   case "development":
-    base_url = "../static/test";
+    base_url = "../static/test/";
     break;
   case "production":
-    base_url = "../static/test";
+    base_url = "../static/test/";
     break;
   case "debug":
-    base_url = "../static/test";
+    base_url = "../static/test/";
     break;
 }
 
@@ -24,7 +25,7 @@ switch (process.env.NODE_ENV) {
 function baseRequest(options) {
   // 1.封装请求所需要的参数
   let obj = {
-    method: options.type,
+    method: options.method,
     url: base_url + options.url
   }
   // 2.传递了参数需要带上参数
@@ -39,6 +40,8 @@ function baseRequest(options) {
   // 4.正式发起请求
   return axios(obj).then((res)=> {
     return res.data;
+  }).catch((err)=> {
+    console.log(err)
   })
 }
 
@@ -47,8 +50,7 @@ function baseRequest(options) {
  */
 async function get(options) {
   options.method = "get";
-  let result = await baseRequest(options);
-  return result;
+  return baseRequest(options);
 }
 
 /**
@@ -56,13 +58,24 @@ async function get(options) {
  */
 async function post(options) {
   options.method = "post";
-  options.data = qs.stringify(data);
-  let result = await baseRequest(options);
-  return result;
+  options.data = qs.stringify(options.data);
+  return baseRequest(options);
 }
 
+// 请求拦截器
+axios.interceptors.request.use(
+  config => {
+    // 每次发送请求之前判断是否存在token
+    // 如果存在，则统一在http请求的header都加上token，这样后台根据token判断你的登录情况，此处token一般是用户完成登录后储存到localstorage里的
+    token && (config.headers.Authorization = token)
+    return config
+  },
+  error => {
+    return Promise.error(error)
+  })
+
 /**
- * 请求拦截器设置
+ * 响应拦截器设置
  */
 axios.interceptors.response.use(
   response=> {
@@ -73,10 +86,10 @@ axios.interceptors.response.use(
     }
   },
   error=> {
-    if(err.response){
-      switch(err.response.code){
+    if (err.response) {
+      switch (err.response.code) {
         case 40103:
-          router.replace({ path: '/login' });
+          router.replace({path: '/login'});
           localStorage.removeItem("tokenValue");
           break;
       }
@@ -84,26 +97,6 @@ axios.interceptors.response.use(
     }
   }
 )
-
-
-/*
- /!**
- * get请求
- *!/
- const get = (params)=> {
- return axios.get(`${base_url}/${params}`).then((res)=>res.data).catch((err)=> {
- console.log(err)
- })
- }
-
- /!**
- * post请求
- *!/
- const post = (params, data)=> {
- return axios.get(`${base_url}/${params}`, qs.stringify(data)).then((res)=>res.data).catch((err)=> {
- console.log(err)
- })
- }*/
 
 export {
   get,

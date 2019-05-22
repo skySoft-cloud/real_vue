@@ -2,7 +2,7 @@
   <div>
     <el-row type="flex" class="row-bg bg-custom" justify="center">
       <el-col :span="24">
-        <h1>{{msg}}</h1>
+        <h3>{{msg}}</h3>
       </el-col>
     </el-row>
   </div>
@@ -13,7 +13,7 @@
     name: 'AppHeader',
     data () {
       return {
-        msg: "某人的2019年"
+        msg: "苏嘟嘟儿的2019年"
       }
     },
     methods: {

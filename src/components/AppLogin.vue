@@ -99,6 +99,7 @@
   }
 
   .box-shadow-class {
+    min-width: 320px;
     padding: 26px;
     box-shadow: 0 0 25px #cac6c6;
   }
