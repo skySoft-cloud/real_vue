@@ -103,4 +103,7 @@
     padding: 26px;
     box-shadow: 0 0 25px #cac6c6;
   }
+  .el-main{
+    overflow: initial;
+  }
 </style>

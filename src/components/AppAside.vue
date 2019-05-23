@@ -16,10 +16,11 @@
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-fa fa-user"></i>
-              <span>人物简介</span>
+              <span>人物地点</span>
             </template>
             <el-menu-item index="appmale">陈云</el-menu-item>
             <el-menu-item index="appfemale">苏继培</el-menu-item>
+            <el-menu-item index="appaddress">地点连线</el-menu-item>
           </el-submenu>
           <el-menu-item index="subpageone">
             <i class="el-icon-fa fa-transgender"></i>
@@ -71,5 +72,6 @@
 <style scoped>
   .el-aside-min-height {
     height: 500px;
+    text-align: left;
   }
 </style>

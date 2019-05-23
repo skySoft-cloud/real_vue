@@ -7,6 +7,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 import App from './App'
 import router from './router'
 import * as ajax from './utils/ajax.js'
+import echarts from 'echarts'
+import BaiduMap from 'vue-baidu-map'
 
 
 /**
@@ -24,7 +26,11 @@ router.beforeEach((to, from, next)=> {
 
 Vue.config.productionTip = false
 Vue.use(ElementUI);
+Vue.use(BaiduMap, {
+  ak: 'pIDK9LNiGveKMenKqUlXf5oRFs1wchNu'
+})
 Vue.prototype.$ajax  = ajax;
+Vue.prototype.$echarts = echarts
 
 /* eslint-disable no-new */
 new Vue({

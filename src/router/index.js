@@ -10,6 +10,7 @@ import AppMale from '@/components/AppMale'
 import AppEducateChildren from '@/components/AppEducateChildren'
 import AppManageWork from '@/components/AppManageWork'
 import AppSupportElderly from '@/components/AppSupportElderly'
+import AppAddress from '@/components/AppAddress'
 
 Vue.use(Router)
 
@@ -35,6 +36,9 @@ export default new Router({
         {
           path: 'appmale',
           component: AppMale,
+        },{
+          path: 'appaddress',
+          component: AppAddress,
         },
         {
           path: 'appeducatechildren',
