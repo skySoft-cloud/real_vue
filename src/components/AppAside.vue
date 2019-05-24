@@ -35,9 +35,9 @@
               <i class="el-icon-fa fa-calendar"></i>
               <span slot="title">婚后计划</span>
             </template>
-            <el-menu-item index="appeducatechildren">安排工作</el-menu-item>
-            <el-menu-item index="appmanagework">赡养老人</el-menu-item>
-            <el-menu-item index="appsupportelderly">教育子女</el-menu-item>
+            <el-menu-item index="appeducatechildren">教育子女</el-menu-item>
+            <el-menu-item index="appmanagework">工作计划</el-menu-item>
+            <el-menu-item index="appsupportelderly">赡养老人</el-menu-item>
           </el-submenu>
         </el-menu>
       </el-col>
