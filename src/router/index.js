@@ -21,10 +21,11 @@ export default new Router({
       path: '/',
       //redirect:"/login",
       component: subPage,
-      children: [{
-        path: 'subpageone',
-        component: subPageOne,
-      },
+      children: [
+        {
+          path: 'subpageone',
+          component: subPageOne,
+        },
         {
           path: 'appweddingceremony',
           component: AppWeddingCeremony,
@@ -36,7 +37,8 @@ export default new Router({
         {
           path: 'appmale',
           component: AppMale,
-        },{
+        },
+        {
           path: 'appaddress',
           component: AppAddress,
         },

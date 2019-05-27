@@ -1,8 +1,8 @@
 <template>
   <div class="content-wrap">
-    <el-carousel :interval="4000" type="card" height="200px">
-      <el-carousel-item v-for="item in 6" :key="item">
-        <h3 class="medium">{{ item }}</h3>
+    <el-carousel indicator-position="outside">
+      <el-carousel-item v-for="(url,index) in banner" :key="index">
+        <img :src="url.img_url">
       </el-carousel-item>
     </el-carousel>
   </div>
@@ -13,7 +13,11 @@
     name: 'AppWeddingCeremony',
     data () {
       return {
-
+        banner:[
+          {img_url:require('../assets/img/banner01.png')},
+          {img_url:require('../assets/img/banner02.png')},
+          {img_url:require('../assets/img/banner03.png')}
+        ]
       }
     },
     mounted(){
@@ -40,5 +44,8 @@
 
   .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
+  }
+  .el-carousel__item img{
+    width: 100%;
   }
 </style>

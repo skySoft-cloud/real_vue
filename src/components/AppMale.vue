@@ -11,7 +11,7 @@
       return {
         option : {
         title : {
-          text: '云狗儿技能图',
+          text: '狗崽子技能图',
           subtext: '',
           x:'center'
         },
