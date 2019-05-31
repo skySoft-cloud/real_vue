@@ -1,5 +1,5 @@
 <template>
-  <div class="content-wrap">
+  <div class="content-wrap private-height">
     <div class="block">
       <el-timeline style="text-align: left">
         <el-timeline-item timestamp="2019/3/14" placement="top">
@@ -60,5 +60,8 @@
 </script>
 
 <style scoped>
-
+.private-height{
+  height:500px;
+  overflow: scroll;
+}
 </style>

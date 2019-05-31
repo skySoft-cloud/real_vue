@@ -12,7 +12,7 @@
           :router="true"
           :unique-opened="true"
           :collapse-transition="true"
-          active-text-color="lightpink">
+          active-text-color="#fff">
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-fa fa-user"></i>
@@ -42,7 +42,7 @@
         </el-menu>
       </el-col>
       <el-col :span="20">
-        <el-col :span="20">
+        <el-col :span="24">
           <router-view></router-view>
         </el-col>
       </el-col>
@@ -71,7 +71,11 @@
 
 <style scoped>
   .el-aside-min-height {
-    height: 500px;
+    min-height:540px;
     text-align: left;
+    box-shadow: 0px 2px 6px 1px grey;
+  }
+  .el-menu-item.is-active{
+    background-color: #f58f98 !important;
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <app-header></app-header>
+    <app-header class="bottom-space"></app-header>
     <app-aside></app-aside>
     <!--<el-row type="flex" justify="center" class="main-min-height">
       <el-col :span="24">
@@ -9,7 +9,7 @@
         </el-col>
       </el-col>
     </el-row>-->
-    <app-footer class="bg-custom fixed-class"></app-footer>
+    <app-footer class="bg-custom"></app-footer>
   </div>
 </template>
 
@@ -36,7 +36,10 @@
 .main-min-height{
   height:500px;
 }
-  .fixed-class{
-    position: fixed;bottom: 0;width: 100%;
+  /*.fixed-class{*/
+    /*position: fixed;bottom: 0;width: 100%;*/
+  /*}*/
+  .bottom-space{
+    margin-bottom:10px;
   }
 </style>
