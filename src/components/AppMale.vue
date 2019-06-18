@@ -15,6 +15,7 @@
           subtext: '',
           x:'center'
         },
+          test:"test",
         tooltip : {
           trigger: 'item',
           formatter: "{a} <br/>{b} : {c} ({d}%)"
